@@ -1,0 +1,19 @@
+<?php
+	$errmsg= "";
+
+	$submit= $_GET("submit");
+	if( $submit != "" ) {
+		$_SESSION['IT']['keysets']= "1";          // USE
+	}
+	else
+	if( isset($_GET['ret']) ) {;}                 // 戻り処理
+	else {
+		$_SESSION['IT']['errmsg']= "";
+	}
+
+	$param= array();
+	$param['errmsg']= $errmsg;
+	$param['id']=     'id';
+	$gamensend= "1";
+	require("pire_gamen_send.php");               // 入力画面出力
+?>
